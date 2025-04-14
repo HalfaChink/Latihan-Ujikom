@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(to right, black, gray);
+    background-size: 200% 100%;
+    animation: gradientMoveReg 6s ease infinite alternate;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: popUp 0.5s ease-out forwards;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+}
+
+.btn-primary {
+    background-color: gray;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: black;
+}
+
+.login-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.popup-error,
+        .popup-success {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-error {
+            background-color: #f44336;
+        }
+
+        .popup-success {
+            background-color: #4CAF50;
+        }
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes gradientMoveReg {
+    0% {
+        background-position: right;
+    }
+    100% {
+        background-position: left;
+    }
+}

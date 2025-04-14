@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+#wrapper {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    transition: all 0.3s ease;
+    min-height: 100vh;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+#sidebar-wrapper .list-group-item {
+    transition: background-color 0.2s ease;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: #495057;
+    color: white;
+}
+
+.modal-content {
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Loading screen style */
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+  }
+
+  #loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #loading-screen div {
+    font-size: 24px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+  }
+
+  #loading-screen .spinner {
+    border: 4px solid #f3f3f3; /* warna abu-abu untuk border luar */
+    border-top: 4px solid black; /* warna biru untuk border atas */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* animasi muter */
+}
+
+
+@keyframes fadeIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#sidebar-wrapper {
+    transition: all 0.3s ease;
+    width: 250px;
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper.hide {
+    margin-left: -250px;
+}
+
+/* Responsive Sidebar: Tablet & HP */
+@media (max-width: 768px) {
+    #wrapper {
+        flex-direction: column; /* Stack: Sidebar di atas */
+    }
+
+    #sidebar-wrapper {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        margin-left: 0 !important;
+        border-right: none;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    #sidebar-wrapper.hide {
+        display: none; /* Sembunyiin kalau hide */
+    }
+
+    #page-content-wrapper {
+        margin-left: 0;
+    }
+
+    #sidebar-wrapper .list-group-item {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Sidebar animasi */
+    #sidebar-wrapper {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 1;
+    }
+
+    #sidebar-wrapper.hide {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+}
