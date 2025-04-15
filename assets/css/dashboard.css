@@ -60,7 +60,7 @@ body {
 
   #loading-screen .spinner {
     border: 4px solid #f3f3f3; /* warna abu-abu untuk border luar */
-    border-top: 4px solid black; /* warna biru untuk border atas */
+    border-top: 4px solid black; /* warna negro untuk border atas */
     border-radius: 50%;
     width: 50px;
     height: 50px;

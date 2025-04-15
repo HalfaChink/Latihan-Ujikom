@@ -43,7 +43,7 @@ $success = $_GET['success'] ?? '';
             <div class="col-md-6 col-lg-4">
                 <div class="card bg-white">
                     <h1 class="text-center mb-4">Daftar</h1>
-                    <form id="register-form" method="POST" action="assets/view/register.php">
+                    <form id="register-form" method="POST" action="../controller/registerController.php">
                         <!-- Form input untuk username -->
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>

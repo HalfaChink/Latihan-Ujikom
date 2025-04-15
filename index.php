@@ -22,7 +22,6 @@ $error = $_GET['error'] ?? '';
             setTimeout(() => popup.style.display = "none", 3000);
         </script>
     <?php endif; ?>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">

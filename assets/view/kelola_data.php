@@ -73,7 +73,7 @@ $pegawai = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php unset($_SESSION['alert']); ?> <!-- Menghapus alert setelah ditampilkan -->
                 <?php endif; ?>
 
-                <input type="text" id="search" class="form-control mb-3" placeholder="Cari pegawai...">
+                <input type="text" id="search" class="form-control mb-3" placeholder="Cari...">
 
                 <!-- Menampilkan tabel data pegawai -->
                 <div class="table-responsive">

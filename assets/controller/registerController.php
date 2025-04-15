@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Kalau sudah ada user dengan username itu, redirect dan kirim pesan error
     if ($stmt->rowCount() > 0) {
-        header("Location: ../../register.php?error=Username%20sudah%20terdaftar.");
+        header("Location: ../view/register.php?error=Username%20sudah%20terdaftar.");
         exit();
     } else {
         // Kalau belum, simpan user baru ke database
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$username, $password]);
 
         // Redirect ke halaman register dengan pesan sukses
-        header("Location: ../../register.php?success=Pendaftaran%20berhasil.%20Silakan%20login.");
+        header("Location: ../view/register.php?success=Pendaftaran%20berhasil.%20Silakan%20login.");
         exit();
     }
 }

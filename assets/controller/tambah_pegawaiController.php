@@ -38,11 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['alert'] = ['type' => 'warning', 'message' => 'Semua field harus diisi!'];
     }
 
-    // Setelah selesai, kembali ke dashboard
-    header("Location: ../view/dashboard.php");
+    // Setelah selesai, kembali ke kelola data
+    header("Location: ../view/kelola_data.php");
     exit();
 } else {
-    // Kalau akses bukan lewat POST, langsung arahkan ke dashboard
-    header("Location: ../view/dashboard.php");
+    // Kalau akses bukan lewat POST, langsung arahkan ke kelola data
+    header("Location: ../view/kelola_data.php");
     exit();
 }

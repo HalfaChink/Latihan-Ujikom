@@ -13,7 +13,6 @@ if (!isset($_SESSION['users_id'])) {
 
 // Cek apakah request-nya metode POST (form edit dikirim)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     // Ambil data dari form (pakai null coalescing & trim buat amankan input)
     $id      = $_POST['id'] ?? '';
     $nama    = trim($_POST['nama'] ?? '');

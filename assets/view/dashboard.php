@@ -52,21 +52,20 @@ $jabatanStats = $stmtJabatan->fetchAll(PDO::FETCH_ASSOC); // Menyimpan hasil sta
             </div>
         </div>
 
-        <!-- Konten utama halaman -->
+        <!-- Page Content -->
         <div id="page-content-wrapper" class="w-100">
-            <!-- Navbar bagian atas dengan tombol untuk toggle sidebar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom px-3">
                 <button class="btn btn-outline-secondary" id="menu-toggle">☰</button>
                 <div class="ms-auto">
-                    <!-- Menampilkan nama pengguna yang sedang login -->
+                    <!-- Menampilkan username yang login dan tombol logout -->
                     <span class="me-2 fw-bold">Halo, <?= htmlspecialchars($user['username']) ?></span>
-                    <!-- Tombol logout yang mengarahkan ke file logout.php -->
                     <a href="logout.php" class="btn btn-sm btn-danger">Logout</a>
                 </div>
             </nav>
 
             <!-- Menampilkan statistik jabatan pegawai dalam bentuk card -->
             <div class="row m-4">
+                
                 <?php foreach ($jabatanStats as $stat): ?>
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
                         <div class="card text-white bg-dark mb-3 shadow-sm" style="border-radius: 8px;">
@@ -85,24 +84,7 @@ $jabatanStats = $stmtJabatan->fetchAll(PDO::FETCH_ASSOC); // Menyimpan hasil sta
 
     <!-- Mengimpor Bootstrap JS dan bundle untuk interaktivitas (collapse, modal, dll) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Menghitung durasi halaman loading agar loading screen menghilang dengan smooth
-        const loadingScreen = document.getElementById('loading-screen');
-        const startTime = Date.now();
-
-        // Setelah halaman selesai dimuat, hilangkan loading screen
-        window.addEventListener('load', function() {
-            const loadDuration = Date.now() - startTime;
-            const minimumDuration = 800; // Durasi minimum untuk menampilkan loading screen
-            const remainingTime = Math.max(minimumDuration - loadDuration, 0); // Waktu sisa yang perlu ditunggu
-
-            // Setelah waktu yang cukup, menghilangkan loading screen dengan efek fade-out
-            setTimeout(() => {
-                loadingScreen.classList.add('fade-out');
-                setTimeout(() => loadingScreen.style.display = 'none', 500);
-            }, remainingTime);
-        });
-    </script>
+    <script src="../js/dashboard.js"></script>
 </body>
 
 </html>
