@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
     }, remainingTime);
 });
 
-// Yg di bawah ini versi lama animasi load yang udah dikomen
+// Yang di bawah ini versi lama animasi load yang udah dikomen
 // window.addEventListener('load', () => {
 //     const loading = document.getElementById('loading-screen');
 //     loading.classList.add('hidden');

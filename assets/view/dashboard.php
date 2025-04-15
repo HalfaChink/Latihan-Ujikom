@@ -31,8 +31,10 @@ $jabatanStats = $stmtJabatan->fetchAll(PDO::FETCH_ASSOC); // Menyimpan hasil sta
     <title>Dashboard</title>
     <!-- Menambahkan link CSS Bootstrap untuk styling halaman -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
     <!-- Menambahkan link ke file CSS custom untuk halaman dashboard -->
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel=" stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -47,8 +49,8 @@ $jabatanStats = $stmtJabatan->fetchAll(PDO::FETCH_ASSOC); // Menyimpan hasil sta
             <div class="sidebar-heading fw-bold">Admin Panel</div>
             <div class="list-group list-group-flush mt-3">
                 <!-- Menu sidebar untuk navigasi ke halaman dashboard dan kelola data -->
-                <a href="dashboard.php" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
-                <a href="kelola_data.php" class="list-group-item list-group-item-action bg-dark text-white">Kelola Data</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="bi bi-speedometer"></i> Dashboard</a>
+                <a href="kelola_data.php" class="list-group-item list-group-item-action bg-dark text-white "><i class="bi bi-pencil-square"></i> Kelola Data</a>
             </div>
         </div>
 
@@ -59,13 +61,13 @@ $jabatanStats = $stmtJabatan->fetchAll(PDO::FETCH_ASSOC); // Menyimpan hasil sta
                 <div class="ms-auto">
                     <!-- Menampilkan username yang login dan tombol logout -->
                     <span class="me-2 fw-bold">Halo, <?= htmlspecialchars($user['username']) ?></span>
-                    <a href="logout.php" class="btn btn-sm btn-danger">Logout</a>
+                    <a href="logout.php" class="btn btn-sm btn-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
                 </div>
             </nav>
 
             <!-- Menampilkan statistik jabatan pegawai dalam bentuk card -->
             <div class="row m-4">
-                
+
                 <?php foreach ($jabatanStats as $stat): ?>
                     <div class="col-md-4 col-sm-6 col-12 mb-3">
                         <div class="card text-white bg-dark mb-3 shadow-sm" style="border-radius: 8px;">

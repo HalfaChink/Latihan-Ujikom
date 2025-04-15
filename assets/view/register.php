@@ -12,6 +12,7 @@ $success = $_GET['success'] ?? '';
     <title>Daftar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/register.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 
 <body>

@@ -28,6 +28,8 @@ $pegawai = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Kelola Data</title>
     <!-- Menggunakan Bootstrap untuk desain dan layout -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
     <link rel="stylesheet" href="../css/dashboard.css"> <!-- Menyertakan file CSS untuk tampilan custom -->
 </head>
 
@@ -41,8 +43,8 @@ $pegawai = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="border-end bg-dark text-white p-3" id="sidebar-wrapper">
             <div class="sidebar-heading fw-bold">Admin Panel</div>
             <div class="list-group list-group-flush mt-3">
-                <a href="dashboard.php" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
-                <a href="kelola_data.php" class="list-group-item list-group-item-action bg-dark text-white">Kelola Data</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="bi bi-speedometer"></i> Dashboard</a>
+                <a href="kelola_data.php" class="list-group-item list-group-item-action bg-dark text-white "><i class="bi bi-pencil-square"></i> Kelola Data</a>
             </div>
         </div>
 
@@ -53,7 +55,7 @@ $pegawai = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="ms-auto">
                     <!-- Menampilkan username yang login dan tombol logout -->
                     <span class="me-2 fw-bold">Halo, <?= htmlspecialchars($user['username']) ?></span>
-                    <a href="logout.php" class="btn btn-sm btn-danger">Logout</a>
+                    <a href="logout.php" class="btn btn-sm btn-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
                 </div>
             </nav>
 
@@ -90,9 +92,12 @@ $pegawai = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </thead>
                         <tbody>
                             <!-- Loop untuk menampilkan data pegawai -->
-                            <?php foreach ($pegawai as $p): ?>
+                            <?php
+                            $no = 1;
+                            foreach ($pegawai as $p):
+                            ?>
                                 <tr>
-                                    <td><?= $p['id'] ?></td>
+                                    <td><?= $no++ ?></td>
                                     <td><?= $p['nama'] ?></td>
                                     <td><?= $p['jabatan'] ?></td>
                                     <td><?= $p['email'] ?></td>
